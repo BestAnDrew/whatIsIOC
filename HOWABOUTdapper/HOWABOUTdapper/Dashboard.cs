@@ -12,9 +12,26 @@ namespace HOWABOUTdapper
 {
     public partial class Dashboard : Form
     {
+        List<Person> lp = new List<Person>();
         public Dashboard()
         {
             InitializeComponent();
+
+            listBox1.DataSource = lp;
+            listBox1.DisplayMember = "FullInfo";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            DataAccess da = new DataAccess();
+            lp = da.GetPeople(textBox1.Text);
+            listBox1.DataSource = lp;
+            listBox1.DisplayMember = "FullInfo";
         }
     }
 }
