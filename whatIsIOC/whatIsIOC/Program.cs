@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Google.Cloud.Translation;
+using Google.Cloud.Translation.V2;
 
 namespace whatIsIOC
 {
@@ -23,6 +25,28 @@ namespace whatIsIOC
 
             //Open Closed Principle
             //开闭原则
+            //var client = TranslationClient.Create();
+            //var text = "MM년dd월";
+
+            //Console.WriteLine(client.TranslateText(text,LanguageCodes.Serbian));
+
+            Console.WriteLine(DateTime.Now.ToString("MM/dd"));
+
+            //string text = "我喜欢跑步。";
+            //string translated = Translator.Translate(text, Language.Chinese_Simplified, Language.English);
+            //Console.WriteLine(translated);
+
+
+        }
+
+        private static bool IsRightRole(string[] rolename)
+        {
+            string juese = "管理员";
+            if (rolename.Select(x => x == juese).FirstOrDefault())
+            {
+                return true;   
+            }
+            return false;
         }
     }
 }
