@@ -35,6 +35,13 @@ namespace whatIsIOC
             //string text = "我喜欢跑步。";
             //string translated = Translator.Translate(text, Language.Chinese_Simplified, Language.English);
             //Console.WriteLine(translated);
+            string[] a = new string[] { "管理员1", "112", "2121", "管理员", "管理员" };
+            string juese = "管理员";
+            var b = a.Contains<string>(juese);
+            //if (b)
+            //{
+            //    Console.WriteLine("1");
+            //}
 
 
         }
